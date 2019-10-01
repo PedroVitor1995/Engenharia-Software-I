@@ -1,0 +1,8 @@
+<h2>Importar</h2>
+<form method="post" action="{% url 'import_csv'%}" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="file" name="file_csv" required autofocus>
+	<button type="submit">Importar</button>
+</form>
+
+
