@@ -18,3 +18,8 @@ def import_csv(request):
 	
 	alunos = Aluno.objects.all()
 	return render(request,'lista_alunos.html',{"alunos":alunos})
+
+def listar_alunos(request):
+	alunos = Aluno.objects.all()
+	return render(request,'lista_alunos.html',{'alunos':alunos})
+

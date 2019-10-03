@@ -3,5 +3,6 @@ from app import views
 
 urlpatterns = [
 	path('', views.index, name='index'),
-	path('listar/', views.import_csv, name='import_csv'),
+	path('importar/', views.import_csv, name='import_csv'),
+	path('lista/', views.listar_alunos, name='listar_alunos'),
 ]
