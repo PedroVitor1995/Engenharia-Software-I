@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+  <div class="w3-display-left" style="padding:48px">
+    <p class="w3-jumbo w3-hide-small" style="text-shadow:1px 1px 0 #444"><strong>Gerenciador de Atividades</strong></p>
+    <p class="w3-xxlarge w3-hide-large w3-hide-medium" style="text-shadow:1px 1px 0 #444"><strong>Gerenciador de Atividades</strong></p>
+    <p class="w3-large w3-right-align" style="text-shadow:1px 1px 0 #444">Cadastro e Sorteio de Atividades</p>
+    <p class="w3-large w3-right-align" style="text-shadow:1px 1px 0 #444">Cadastro de grupos</p>
+    <p class="w3-large w3-right-align" style="text-shadow:1px 1px 0 #444"><a href="{% url 'importar'%}">Importação de Alunos</a></p>
+  </div> 
+{% endblock %}

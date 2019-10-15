@@ -1,9 +1,0 @@
-{% if alunos %}
-	<h2>Alunos</h2>
-	{% for aluno in alunos%}
-		<p>{{aluno.nome}}</p>
-	{% endfor %}
-{% else %}
-	<p>Não existe alunos</p>
-	<a href="{% url 'index'%}">Importar Alunos</a>
-{% endif %}
