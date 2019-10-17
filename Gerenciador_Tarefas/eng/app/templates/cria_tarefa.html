@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 	<div class="w3-display-center" style="padding:48px">
-		<p class="w3-jumbo w3-hide-small" style="text-shadow:1px 1px 0 #444"><strong>Importar Alunos</strong></p>
+		<p class="w3-jumbo w3-hide-small" style="text-shadow:1px 1px 0 #444"><strong>Nova Tarefa</strong></p>
 		<div class="w3-large">
 			<form method="post" action="{% url 'importar_alunos'%}" enctype="multipart/form-data">
 				{% csrf_token %}
