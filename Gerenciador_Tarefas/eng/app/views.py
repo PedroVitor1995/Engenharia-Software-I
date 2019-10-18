@@ -8,7 +8,7 @@ def index(request):
 	return render(request,'home.html')
 
 def importar(request):
-	return render(request,'importar.html')
+	return render(request,'importa.html')
 
 def importar_alunos(request):
 	arquivo = request.FILES["file"]
@@ -28,16 +28,14 @@ def listar_tarefas(request):
 	tarefas = Tarefa.objects.all()
 	return render(request,'lista_tarefas.html',{'tarefas':tarefas})
 
-def cria_tarefa(request):
-	if request.POST:
-		form = Tarefa(request.POST)
-		if form.is_valid():
-			descricao = request.POST['descricao']
-			data_realizacao = request.POST['data_realizacao']
-			Tarefa.objects.create(descricao = texto, )
-			messages.success(request, 'Postagem feita com sucesso.')
-		else:
-			messages.error(request, 'Não foi possivel fazer a postagem')
+def criar_tarefa(request):
+	return render(request,'cria_tarefa.html')
 
-	return redirect('timeline')
+def listar_grupos(request):
+	grupos = Grupo.objects.all()
+	return render(request,'lista_grupos.html',{'grupos':grupos})
+
+def criar_grupo(request):
+	return render(request,'cria_grupo.html')
+
 
