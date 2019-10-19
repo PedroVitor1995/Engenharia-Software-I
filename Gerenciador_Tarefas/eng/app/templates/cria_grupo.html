@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block body %}
-	<div class="w3-display-center" style="padding:48px">
-		<h3 style="text-shadow:1px 1px 0 #444"><a href="{% url 'listar_grupos'%}"><i class="fa fa-arrow-left"></i></a> <strong>Novo Grupo</strong></h3>
+	<div class="w3-display-center" style="margin-left: 4%; margin-right: 4%; padding-top: 5%;">
+		<h3 class="w3-text-white" style="text-shadow:1px 1px 0 #444"><a href="{% url 'listar_grupos'%}"><i class='fas fa-arrow-alt-circle-left' style='font-size:24px'></i></a> <strong>Novo Grupo</strong></h3>
 		<div class="w3-large">
-			<form method="post" action="{% url 'importar_alunos'%}" enctype="multipart/form-data">
+			<form method="post" action="{% url 'criar_grupo'%}" enctype="multipart/form-data">
 				{% csrf_token %}
 				<div class="row">
 					<div class="col-lg-12">
-						<label class="control-label">Descrição</label>
-						<input type="text" class="form-control" required autofocus>
+						<label class="control-label"><strong>Descrição</strong></label>
+						<input type="text" name="descricao" class="form-control" required autofocus>
 					</div>
 				</div>
 				<div class="mt-3 w3-right">

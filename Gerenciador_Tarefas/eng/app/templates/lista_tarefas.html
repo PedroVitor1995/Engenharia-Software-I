@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block body %}  
-	{% if alunos %}
-		<div style="margin-left: 4%; margin-right: 4%; padding-top: 4%;">
+	{% if tarefas %}
+		<div style="margin-left: 4%; margin-right: 4%; padding-top: 5%;">
 			<div class="w3-container w3-hide-small" style="text-shadow:1px 1px 0 #444;">
 				<div class="row">
-					<div class="col-sm-6"><h2>Tarefas</h2></div>
-					<div class="col-sm-6"><a class="btn btn-primary pull-right" href="{% url 'criar_tarefa'%}">Criar Tarefa</a></div>
+					<div class="col-sm-6 w3-text-white"><h2><strong>Tarefas</strong></h2></div>
+					<div class="col-sm-6"><a class="btn btn-primary pull-right" href="{% url 'criar_tarefa'%}"><i class="fas fa-plus"></i> Nova Tarefa</a></div>
 				</div>
 				<hr>
 			</div>
@@ -15,13 +15,19 @@
 					<tr class="w3-light-blue">
 						<th>Descricao</th>
 						<th>Data de Realização</th>
+						<th>Aluno</th>
+						<th>Grupo</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for tarefa in tarefas%}
 						<tr>
 							<td>{{tarefa.descricao}}</td>
-							<td>{{data_realizacao}}</td>
+							<td>{{tarefa.data_realizacao}}</td>
+							<td>{{tarefa.aluno.nome}}</td>
+							<td>{{tarefa.grupo.descricao}}</td>
+							<td style="text-align: center;"><a href="{% url 'sortear' tarefa.id %}" class="btn btn-success">Sortear</a></td>
 						</tr>
 					{% endfor %}
 				</tbody>
@@ -32,8 +38,8 @@
 		<div style="margin-left: 4%; margin-right: 4%; padding-top: 4%;">
 			<div class="w3-container w3-hide-small" style="text-shadow:1px 1px 0 #444;">
 				<div class="row">
-					<div class="col-sm-12"><a class="btn btn-primary pull-right" href="{% url 'criar_tarefa'%}">Criar Tarefa</a></div>
-					<div class="col-sm-12 w3-center"><h2 class="w3-text-white">Não existe tarefas</h2></div>
+					<div class="col-sm-12"><a class="btn btn-primary pull-right" href="{% url 'criar_tarefa'%}"><i class="fas fa-plus"></i> Nova Tarefa</a></div>
+					<div class="col-sm-12 w3-center"><h2 class="w3-text-white"><strong>Não existe tarefas</strong></h2></div>
 				</div>
 			</div>
 		</div>

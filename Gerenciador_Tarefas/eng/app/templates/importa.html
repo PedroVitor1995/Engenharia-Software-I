@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block body %}
-	<div class="w3-display-center" style="padding:48px">
-		<h3 style="text-shadow:1px 1px 0 #444"><strong>Importar Alunos</strong></h3>
+	<div class="w3-display-center" style="margin-left: 4%; margin-right: 4%; padding-top: 5%;">
+		<h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444"><a href="{% url 'listar_alunos'%}"><i class='fas fa-arrow-alt-circle-left' style='font-size:24px'></i></a> <strong>Importar Alunos</strong></h2>
 		<div class="w3-large">
 			<form method="post" action="{% url 'importar_alunos'%}" enctype="multipart/form-data">
 				{% csrf_token %}
-				<label class="control-label">Selecione o arquivo:</label>
+				<label class="control-label"><strong>Selecione o arquivo</strong></label>
 				<div class="custom-file mb-3">
 			      <input type="file" class="custom-file-input" id="customFile" name="file" required autofocus>
 			      <label class="custom-file-label" for="customFile">Escolher arquivo</label>
