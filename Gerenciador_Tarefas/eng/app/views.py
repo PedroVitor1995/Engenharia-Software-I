@@ -9,9 +9,6 @@ import random
 def index(request):	
 	return render(request,'home.html')
 
-def importar(request):
-	return render(request,'importa.html')
-
 def importar_alunos(request):
 	if request.POST:
 		form = AlunoForm(request.POST)
