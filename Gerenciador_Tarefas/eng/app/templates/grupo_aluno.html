@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 	<div class="w3-display-center" style="margin-left: 4%; margin-right: 4%; padding-top: 5%;">
-		<h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444"><a href="{% url 'listar_tarefas'%}"><i class='fas fa-arrow-alt-circle-left' style='font-size:24px'></i></a> <strong>Selecionar grupo para :</strong> {{aluno.nome}}</h2>
+		<h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444"><a href="{% url 'listar_alunos'%}"><i class='fas fa-arrow-alt-circle-left' style='font-size:24px'></i></a> <strong>Selecionar grupo para :</strong> {{aluno.nome}}</h2>
 		<div class="w3-large">
 			<form method="post" action="{% url 'grupo_aluno' aluno.id %}">
 				{% csrf_token %}
